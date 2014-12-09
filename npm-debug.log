@@ -1,0 +1,34 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/chenllos/.nvm/v0.11.14/bin/node',
+1 verbose cli   '/Users/chenllos/.nvm/v0.11.14/bin/npm',
+1 verbose cli   'start' ]
+2 info using npm@2.0.0
+3 info using node@v0.11.14
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info prestart sakura-blog@0.0.1
+6 info start sakura-blog@0.0.1
+7 verbose unsafe-perm in lifecycle true
+8 info sakura-blog@0.0.1 Failed to exec start script
+9 verbose stack Error: Exit status 1
+9 verbose stack     at ChildProcess.<anonymous> (/Users/chenllos/.nvm/v0.11.14/lib/node_modules/npm/lib/utils/lifecycle.js:212:16)
+9 verbose stack     at ChildProcess.emit (events.js:110:17)
+9 verbose stack     at maybeClose (child_process.js:1000:16)
+9 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1072:5)
+10 verbose pkgid sakura-blog@0.0.1
+11 verbose cwd /Users/chenllos/Documents/dev/blog-sakura
+12 error Darwin 14.1.0
+13 error argv "/Users/chenllos/.nvm/v0.11.14/bin/node" "/Users/chenllos/.nvm/v0.11.14/bin/npm" "start"
+14 error node v0.11.14
+15 error npm  v2.0.0
+16 error code ELIFECYCLE
+17 error sakura-blog@0.0.1 start: `node --harmony app.js`
+17 error Exit status 1
+18 error Failed at the sakura-blog@0.0.1 start script.
+18 error This is most likely a problem with the sakura-blog package,
+18 error not with npm itself.
+18 error Tell the author that this fails on your system:
+18 error     node --harmony app.js
+18 error You can get their info via:
+18 error     npm owner ls sakura-blog
+18 error There is likely additional logging output above.
+19 verbose exit [ 1, true ]

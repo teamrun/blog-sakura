@@ -27,8 +27,8 @@ if( productTasks.indexOf(taskName) >= 0 ){
 }
 
 var main = {
-    less: ['public/layout/less/layout.less'],
-    js: ['public/lib/app.js']
+    less: ['public/layout/less/layout*.less'],
+    js: ['public/lib/dashboard.js']
 };
 
 gulp.task('less', function(){
@@ -46,7 +46,7 @@ gulp.task('react', function(){
             transform: [reactify, envify],
             debug: !proEnv
         }))
-        .pipe(rename('bundle.js'))
+        .pipe(rename('bundle-dashboard.js'))
         .pipe(gulp.dest('./public/lib'));
 });
 
@@ -61,8 +61,8 @@ gulp.task('watch', function(){
     gulp.watch(less2Watch,  ['less']);
     gulp.watch(less2Reload, liveReload.changed);
 
-    var js2Watch = ['./public/lib/**/*.js', '!./public/lib/bundle.js'];
-    var js2Reload = ['./public/lib/bundle.js'];
+    var js2Watch = ['./public/lib/**/*.js', '!./public/lib/bundle-dashboard.js'];
+    var js2Reload = ['./public/lib/bundle-dashboard.js'];
     gulp.watch(js2Watch, ['react']);
     gulp.watch(js2Reload, liveReload.changed);
 

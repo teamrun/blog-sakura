@@ -4,6 +4,7 @@
   "description": "blog of sakura, my dear girl friend",
   "main": "app.js",
   "scripts": {
+    "start": "node-dev --harmony app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,8 +18,9 @@
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
     "gulp-util": "^3.0.1",
+    "node-jsx": "^0.12.4",
     "react": "^0.12.1",
-    "reactify": "^0.15.2",
-    "korrect": "*"
+    "react-router": "^0.11.4",
+    "reactify": "^0.15.2"
   }
 }
