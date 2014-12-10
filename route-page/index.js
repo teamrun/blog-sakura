@@ -18,44 +18,66 @@ var index = function* pageIndex(){
  * How to solve server render and client render 's different data problem?
  */
 
-var Dashboard = require('../public/lib/dashboard');
+
+/* -------------------- isomorphic app -------------------- */
+
+// var dashboard = function* pageDashboard(){
+//     var dashboardModulePath = '../public/lib/dashboard';
+//     var Dashboard = require(dashboardModulePath);
+
+    
+//     var appData = {
+//         foo: 'bar'
+//     };
+
+//     // 路由handler中不能用callback了?
+//     // 直接用yield + thunk了
+//     // 注意thunk是 只接受callback的函数
+//     //      且callback接受到的结果, 第一个会被作为是err
+
+//     //var result = yield (function(){
+//     //    return function(cb){
+//     //        setTimeout(function(){
+//     //            cb(null, 22);
+//     //        }, 200);
+//     //    }
+//     //})();
+
+//     var result = yield (function(){
+//         return function(cb){
+//             Router.run(Dashboard, function(Handler, state){
+//                 cb(null, [Handler, state]);
+//             });
+//         }
+//     })();
+
+
+//     //console.log('dev', result);
+//     var Handler = result[0];
+//     //this.body = '3333';
+//     this.body = yield kRender('dashboard', {
+//         title: 'dashboard',
+//         appContent: React.renderToString(Handler())
+//     });
+//     // 哈哈 每次都un require, 然后在路由开始的时候重新require进来
+//     // use resolve to get abs path
+//     delete require.cache[require.resolve(dashboardModulePath)];
+// };
+
+/* -----------------  endof isomorphic app ----------------- */
+
 var dashboard = function* pageDashboard(){
-    var appData = {
-        foo: 'bar'
+    var locale = {
+        title: 'Dashboard 控制台'
     };
 
-    // 路由handler中不能用callback了?
-    // 直接用yield + thunk了
-    // 注意thunk是 只接受callback的函数
-    //      且callback接受到的结果, 第一个会被作为是err
-
-    //var result = yield (function(){
-    //    return function(cb){
-    //        setTimeout(function(){
-    //            cb(null, 22);
-    //        }, 200);
-    //    }
-    //})();
-
-    var result = yield (function(){
-        return function(cb){
-            Router.run(Dashboard, '/form', function(Handler, state){
-                cb(null, [Handler, state]);
-            });
-        }
-    })();
+    this.body = yield kRender('dashboard', locale);
+}
 
 
-    //console.log('dev', result);
-    var Handler = result[0];
-    //this.body = '3333';
-    this.body = yield kRender('dashboard', {
-        title: 'dashboard',
-        appContent: React.renderToString(Handler())
-    });
 
-};
 
+/* -------------------- sign in and sign up -------------------- */
 //app.get('/dashboard/signin', function *(){
 //    this.body = yield render('dashboard', {
 //        title: 'SignIn render to string and fill in'
@@ -65,7 +87,8 @@ var dashboard = function* pageDashboard(){
 //    this.body = yield render('dashboard', {
 //        title: 'SignUp render to string and fill in'
 //    });
-//});
+//})
+/* ---------------- endof sign in and sign up ----------------- */
 
 
 module.exports = {

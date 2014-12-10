@@ -28,7 +28,7 @@ if( productTasks.indexOf(taskName) >= 0 ){
 
 var main = {
     less: ['public/layout/less/layout*.less'],
-    js: ['public/lib/dashboard.js']
+    js: ['public/lib/app-dashboard.js']
 };
 
 gulp.task('less', function(){
