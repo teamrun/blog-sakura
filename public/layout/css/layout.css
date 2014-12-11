@@ -1,17 +1,23 @@
-/* line 1, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout.less */
+/* line 1, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/base/reset.less */
+* {
+  box-sizing: border-box;
+}
+/* line 4, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/base/reset.less */
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* line 10, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/base/reset.less */
+body {
+  margin: 0;
+  font-family: 'Avenir' 'Avenir next' 'Microsoft Yahei';
+}
+/* line 4, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout.less */
 html,
 body {
   height: 100%;
 }
-/* line 4, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout.less */
-body {
-  margin: 0;
-}
-/* line 7, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout.less */
-* {
-  box-sizing: border-box;
-}
-/* line 11, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout.less */
+/* line 8, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout.less */
 #cover {
   height: 100%;
   padding: 1em;
@@ -19,7 +25,7 @@ body {
   background-size: cover;
   background-position: center;
 }
-/* line 18, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout.less */
+/* line 15, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout.less */
 .title {
   margin-top: 10%;
   font-size: 2.5em;

@@ -1,0 +1,23 @@
+/* line 1, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/base/reset.less */
+* {
+  box-sizing: border-box;
+}
+/* line 4, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/base/reset.less */
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* line 10, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/base/reset.less */
+body {
+  margin: 0;
+  font-family: 'Avenir' 'Avenir next' 'Microsoft Yahei';
+}
+/* line 4, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout-dashboard.less */
+html,
+body {
+  height: 100%;
+}
+/* line 8, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout-dashboard.less */
+#ctn {
+  height: 100%;
+}
