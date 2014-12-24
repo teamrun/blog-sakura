@@ -3,8 +3,8 @@ var nodeJSX = require('node-jsx').install();
 var Router = require('react-router');
 
 
-var index = function* pageIndex(){
-    this.body = yield kRender('index', {});
+var index = function pageIndex(req, res, next){
+    res.render('index', {});
 };
 
 
@@ -66,12 +66,21 @@ var index = function* pageIndex(){
 
 /* -----------------  endof isomorphic app ----------------- */
 
-var dashboard = function* pageDashboard(){
+var dashboard = function pageDashboard(req, res, next){
+    console.log('get /dashboard')
     var locale = {
         title: 'Dashboard 控制台'
     };
 
-    this.body = yield kRender('dashboard', locale);
+    res.render('dashboard', locale);
+};
+
+var dashboardSignIn = function pageSignIn(req, res, next){
+    res.send('dashboard signin');
+};
+
+var dashboardSignUp = function pageSignUp(req, res, next){
+    res.send('dashboard signup');
 }
 
 
@@ -93,5 +102,7 @@ var dashboard = function* pageDashboard(){
 
 module.exports = {
     index: index,
+    dashboardSignIn: dashboardSignIn,
+    dashboardSignUp: dashboardSignUp,
     dashboard: dashboard
 };

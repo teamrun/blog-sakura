@@ -2,7 +2,8 @@ var conf = {
     schema: require('./schema/user')
 };
 
+
 module.exports = {
-    methods: {},
+    method: {},
     config: conf
 };

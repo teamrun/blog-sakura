@@ -6,10 +6,10 @@ var PostList = React.createClass({
         };
     },
     componentDidMount: function() {
-        
+        console.timeEnd('switch component');
     },
     componentWillUnmount: function() {
-        
+        console.time('switch component');
     },
     render: function(){
         return <div>PostList</div>;

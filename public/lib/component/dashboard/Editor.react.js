@@ -13,7 +13,7 @@ var Editor = React.createClass({
         console.timeEnd('switch component');
     },
     componentWillUnmount: function() {
-        
+        console.time('switch component');
     },
     render: function(){
         return (

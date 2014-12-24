@@ -6,7 +6,7 @@ var Summary = React.createClass({
         };
     },
     componentDidMount: function() {
-        
+        console.timeEnd('switch component');
     },
     componentWillUnmount: function() {
         console.time('switch component');

@@ -1,11 +1,16 @@
 @import "base/config.less";
 @import "base/reset.less";
 
+@import "dashboard/header.less";
+@import "dashboard/nav.less";
+
 html,body{
     height: 100%;
 }
 
-#ctn{
-    height: 100%;
-}
 
+.main{
+    padding: 1em;
+    margin-left: @_headerW;
+    overflow: auto;
+}

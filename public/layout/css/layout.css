@@ -10,7 +10,26 @@
 /* line 10, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/base/reset.less */
 body {
   margin: 0;
+  color: #333;
+  line-height: 1.5;
   font-family: 'Avenir' 'Avenir next' 'Microsoft Yahei';
+}
+/* line 17, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/base/reset.less */
+a {
+  padding: 0 0.5em;
+  color: #2184A0;
+  text-decoration: none;
+  transition: all 200ms ease;
+}
+/* line 28, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/base/reset.less */
+a.hl {
+  color: #fff;
+  text-decoration: underline;
+  background-color: #2184A0;
+}
+/* line 35, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/base/reset.less */
+p {
+  margin: 0.5em 0;
 }
 /* line 4, /Users/chenllos/Documents/dev/blog-sakura/public/layout/less/layout.less */
 html,
