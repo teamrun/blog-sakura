@@ -24,7 +24,7 @@ function startAppWhenReady(){
         else{
             startAppWhenReady();
         }
-    }, 500);
+    }, 100);
 }
 
 startAppWhenReady();

@@ -57,8 +57,6 @@ function copy(src, dest, callback){
 
 
 function savePhoto(opt, callback){
-    // console.log(opt.files);
-    // console.log(opt.reqData);
     var tmpFile = opt.files.photo.path;
 
     /* ALL parallel
@@ -67,7 +65,6 @@ function savePhoto(opt, callback){
      * resize
      */
     // THEN save to DB
-
     var ep = new EventProxy();
     var photoId = shortid.generate();
     var fileExtName = path.extname(tmpFile)
