@@ -8,6 +8,7 @@ var conf = {
     db: {
         url: 'localhost/blog-sakura'
     },
+    appPath: __dirname,
     uploadTmp: path.resolve('./.uploadTmp'),
     photo: {
         lib: photoLib,

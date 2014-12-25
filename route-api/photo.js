@@ -7,6 +7,9 @@ var shortid = require('shortid');
 var EventProxy = require('eventproxy');
 
 var config = require('../config');
+var getModel = require('../model');
+
+var PhotoModel = getModel().photo;
 
 var DEFAULT_W = 400;
 
@@ -71,17 +74,24 @@ function savePhoto(opt, callback){
     var newName = photoId + fileExtName;
     ep.all('exif', 'resize', 'copy', function(exif, resizeSuc, copySuc){
         var err = null;
-        var data = {
-            photoId: photoId
-        };
         if(exif === null){
 
         }
         if( !(resizeSuc && copySuc) ){
             err = { msg: 'gen thumb suc: ' +resizeSuc + ', copy suc:' + copySuc };
-            data = undefined;
+            callback(err);
+            fs.unlink(tmpFile);
+            return;
         }
-        callback(err, data);
+        var d = new Date();
+        PhotoModel.create({
+            id: photoId,
+            ext: fileExtName,
+            name: opt.reqData.name,
+            uploadDate: d
+        }, callback);
+        // 默默的把临时文件删掉...
+        fs.unlink(tmpFile);
     });
     // read exif
     getExif(tmpFile, function(err, exifData){
@@ -114,6 +124,7 @@ module.exports = {
         };
         savePhoto(opt, function(err, data){
             if(err){
+                console.log(err);
                 res.send({
                     code: 500,
                     files: opt.files
